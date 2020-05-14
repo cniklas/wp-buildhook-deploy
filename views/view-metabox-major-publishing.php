@@ -11,7 +11,7 @@ if ( $has_prod_hook || $has_stage_hook ) : ?>
 		<div><label><input data-env="stage" type="checkbox" name="lbn_published_stage" <?php if ( $published_stage ) : ?>checked<?php endif; ?>>Stage</label></div>
 	<?php endif; ?>
 	<?php if ( $has_prod_hook ) : ?>
-		<div><label><input data-env="production" type="checkbox" name="lbn_published_production" <?php if ( $published_production ) : ?>checked<?php endif; ?>>Production</label></div>
+		<div><label><input data-env="production" type="checkbox" name="lbn_published_production" <?php if ( $published_production || !$has_stage_hook ) : ?>checked<?php endif; ?>>Production</label></div>
 	<?php endif; ?>
 <?php else : ?>
 	<div class="no-hooks">
